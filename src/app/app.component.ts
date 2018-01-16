@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Person} from './person';
+import {PeopleService} from './people.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  config: any;
+  people: Person[];
+
+  constructor(private peopleService: PeopleService) {
+    this.peopleService.getPeople()
+      .subscribe(people => this.people = people);
+  }
 }

@@ -2,13 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ConfigExample</title>
+  <title>External Configuration Example</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .large-text {
+      font-family: sans-serif;
+      font-size: 36pt;
+    }
+    .spinner {
+      margin-left: -130px;
+      z-index: -1;
+    }
+  </style>
 </head>
 <body>
-  <app-root></app-root>
+  <app-root class="container"><div class="large-text">Loading </div><img src="assets/loading_icon.gif" class="spinner"></app-root>
 </body>
 </html>

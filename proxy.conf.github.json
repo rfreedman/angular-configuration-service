@@ -1,0 +1,11 @@
+{
+  "/config/*": {
+    "target": "https://gist.githubusercontent.com",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/config/": "/rfreedman/4541d17989819e9127ec0720ca9b9a99/raw/d0b96a11d41b0bc56b2abf83e2022d5ff0604d0e/"
+    },
+    "changeOrigin": true
+  }
+}

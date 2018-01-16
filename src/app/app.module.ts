@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 import { AppComponent } from './app.component';
+import {ConfigModule, ConfigService, configurationServiceInitializerFactory} from './config/index';
+import {HttpClient} from '@angular/common/http';
+import {PeopleService} from './people.service';
 
 
 @NgModule({
@@ -10,9 +11,15 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ConfigModule
   ],
-  providers: [],
+  providers: [
+    ConfigService,
+    { provide: APP_INITIALIZER, useFactory: configurationServiceInitializerFactory, deps: [ConfigService], multi: true },
+    HttpClient,
+    PeopleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,18 @@
+{
+  "/config/*": {
+    "target": "http://localhost:4200",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/config": "/assets/dev-config"
+    }
+  },
+  "/api/*": {
+    "target": "http://localhost:4200",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api": "/assets/dev-api"
+    }
+  }
+}
