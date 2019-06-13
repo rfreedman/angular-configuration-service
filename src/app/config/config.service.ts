@@ -35,12 +35,10 @@ export class ConfigService {
       const configurationObservable = this.http.get(`config/ui-config.json`); // path is relative to that for app's index.html
       configurationObservable
         .catch(error => {
-          console.log(`error loading configuration: ${JSON.stringify(error)}`);
-          return EMPTY;
+           return EMPTY;
         })
         .subscribe(config => {
             this.configuration = config;
-            console.log(`got configuration: ${JSON.stringify(this.configuration)}`);
             this.loaded = true;
           }
         );
