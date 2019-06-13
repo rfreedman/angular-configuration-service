@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
+import {EMPTY} from 'rxjs';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/empty';
@@ -35,7 +36,7 @@ export class ConfigService {
       configurationObservable
         .catch(error => {
           console.log(`error loading configuration: ${JSON.stringify(error)}`);
-          return Observable.empty();
+          return EMPTY;
         })
         .subscribe(config => {
             this.configuration = config;
